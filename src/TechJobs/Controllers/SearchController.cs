@@ -20,7 +20,10 @@ namespace TechJobs.Controllers
         {
             if (searchType.Equals("all"))
             {
-                List<Dictionary<string, string>> jobs = JobData.FindByValue(searchTerm);
+                List<Dictionary<string, string>> Jobs = JobData.FindByValue(searchTerm);
+                ViewBag.columns = ListController.columnChoices;
+                ViewBag.jobs = Jobs;
+
                 return View("Index");
 
             }
